@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Codeigniter Integration with AdminLTE</title>
+<meta name="author" content="codeglamour">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="assets/css/documenter_style.css" rel="stylesheet">
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<style>
+html, body {
+	background-color: #FFFFFF;
+	color: #383838;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #383838;
+}
+section table {
+	background-color: #FFFFFF;
+}
+		::-moz-selection {
+background:#444444;
+color:#DDDDDD;
+}
+::selection {
+	background: #444444;
+	color: #DDDDDD;
+}
+a.brand {
+	background-image: url(assets/images/image_1.png);
+}
+a, a:hover, a:active {
+	color: #0000FF;
+}
+hr {
+	border-top: 1px solid #EBEBEB;
+	border-bottom: 1px solid #FFFFFF;
+}
+div.navbar-inner, .navbar .nav li ul {
+	background: #DDDDDD;
+	color: #222222;
+}
+a.btn-navbar {
+	background: #DDDDDD;
+	color: #222222;
+}
+.navbar .nav li a {
+	color: #222222;
+	text-shadow: 1px 1px 0px #EEEEEE;
+}
+.navbar .nav li a:hover, .navbar .nav li.active a {
+	text-shadow: none;
+}
+div.navbar-inner ul {
+}
+.navbar .nav > li a {
+	color: #444444;
+}
+.navbar .nav > li a:hover, a.btn-navbar:hover {
+	background: #444444;
+	color: #DDDDDD;
+}
+.navbar .nav .active > a, .navbar .nav .active > a:hover, a.btn-navbar:active {
+	background-color: #444444;
+	color: #DDDDDD;
+}
+.navbar .nav li ul li a:hover {
+	background: #444444;
+	color: #DDDDDD;
+}
+.navbar .nav li ul li a:active {
+	background: #444444;
+	color: #DDDDDD;
+}
+.btn-primary {
+	background-image: -moz-linear-gradient(top, #0088CC, #0044CC);
+	background-image: -ms-linear-gradient(top, #0088CC, #0044CC);
+ background-image: -webkit-gradient(linear, 0 0, 0 0088CC%, from(#DDDDDD), to(#0044CC));
+	background-image: -webkit-linear-gradient(top, #0088CC, #0044CC);
+	background-image: -o-linear-gradient(top, #0088CC, #0044CC);
+	background-image: linear-gradient(top, #0088CC, #0044CC);
+ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088CC', endColorstr='#0044CC', GradientType=0);
+	border-color: #0044CC #0044CC #bfbfbf;
+	color: #FFFFFF;
+}
+.btn-primary:hover,  .btn-primary:active,  .btn-primary.active,  .btn-primary.disabled,  .btn-primary[disabled] {
+	background-color: #0044CC;
+}
+#documenter_copyright {
+	display: block !important;
+	visibility: visible !important;
+}
+#theme_options2 img {
+  border: 1px solid #eee;
+  margin: 10px 0;
+  max-width: 100%;
+  padding: 10px;
+}
+</style>
+</head>
+<body class="documenter-project-Reale Aste-" data-spy="scroll" id="top">
+
+<!-- Documentation Navbar -->
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#">AdminLTE Integration with Codeigniter</a>
+      <div class="nav-collapse">
+        <ul class="nav">       
+          <li><a href="#start" title="start">Start</a></li>
+          <li><a href="#features" title="Features">Features</a></li>
+          <li><a href="#installation" title="Theme Installation">Install Quickstart</a></li>
+          <li><a href="#configuration" title="Site Configuration">Site Configuration</a></li> 
+		      <li><a href="#admin_panel" title="Customize">Admin Panel</a></li>
+          <li><a href="#customize" title="Customize">Customization</a></li>	
+          <li><a href="#version" title="Version">Version</a></li>   
+          <li><a href="#support" title="Support">Support</a></li>   
+          <li><a href="#thanks" title="Thanks">Thanks</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of Navbar --> 
+
+<!-- Main Container Beginning -->
+
+<div class="container" id="documenter_content"> 
+  <div id="start">
+    <div class="masthead">
+      <h1 style="text-align: center">AdminLTE Integration with Codeigniter</h1>
+      <p style="text-align: center">created: 10/03/2017</p>     
+      <p class="download-info">  <a href="#" class="btn btn-large">24/7 Support: Send Us a message from our profile</a> </p>
+    </div>
+    <!-- masthead -->    
+     <div class="highlight hero-unit">
+       We would like to thank you for purchasing this script! We are very pleased you have chosen our script for your project, you will not be disappointed! Before you get started, please be sure to always check out these documentation files. We outline all kinds of good information, and provide you with all the details you need to use.If you have any questions that are beyond the scope of this help file, please feel free to contact us on codeglamour1@gmail.com
+    </div>  
+    <div class="highlight hero-unit">
+      <strong>System Requirements</strong>
+      <p>To installing AdminLTE Integration with Codeigniter, Your web server must be running PHP 5.6 or higher, and Mysql 5 or higher. Below are a list of items you should ensure your host can comply with.
+      </p>
+      <ul>
+        <li>PHP 5.6+</li>
+        <li>PHP 5.x</li>
+        <li>MYSQLi 5.1+</li>
+        <li>Mcrypt Extension</li>
+        <li>MBString Extension</li>
+        <li>MYSQLi Extension</li>
+        <li>CURL Extension (recommended)</li>
+      </ul>
+      <p>*In most hosting accounts these extensions are enabled by default. But you should check with your hosting provider.</p>
+    </div>
+    <!-- intro -->    
+  </div>
+  
+  <section id="features">
+    <div class="page-header">
+      <h3>Features</h3>
+      <hr class="notop">
+    </div>				
+  	 <ul>
+      <li>Framework CodeIgniter version3.1.6</li>
+      <li>AdminLTE version 2.3.1.1</li>
+      <li>Login Authentication</li>
+      <li>Server Side Validation</li>
+      <li>Users CRUD Operation (Add, Edit, Delete, Create)</li>
+      <li>XSS Clean</li>
+      <li>CSRF Protection</li> 
+      <li>100% Customization features</li>
+      <li>Clean Code</li>
+     </ul>	
+
+  </section>
+  
+  <section id="installation">
+    <div class="page-header">
+      <h3>Quick Installation</h3>
+      <hr class="notop">
+    </div>
+    <p>The Quickstart Package consists on a complete Codeigntier + Database Files + Template + Various Modules excellent for beginner users to explore back-end settings and sample content. Installing the Quickstart is just like installing and configuring PHP!, but you will have the full demo of the AdminLTE Integration with Codeigniter your server. Once your environment is ready, follow this quick guide:</p>
+    <ul>
+      <li>Localhost only: create a new folder in the htdocs folder for Xampp (www folder for Wamp). Example: ci_adminlte
+      </li>
+      <li>Unpack all files and folders of the Package file and copy into this newly created folder (htdocs folder for Xampp / www folder for Wamp) or upload them into your sub-domain folder on your live site.
+      </li>
+      <li>Open your favorite browser and type in the address bar localhost/ci_adminlte for localhost or sub-domain.my-live-site.com for your live site sub-domain, then hit Enter.</li>
+    </ul>		
+  </section>
+  
+    <section id="configuration">
+      <div class="page-header">
+        <h3>Site Configuration</h3>
+        <hr class="notop">
+      </div>
+      <h5>
+      <strong>Configure database connection</strong>
+        </h5>
+        <p>
+          You need to have previously setup database from the cPanel.
+        </p>
+        <p>
+          Here is a good tutorial&nbsp;<a href=
+          "https://www.namecheap.com/support/knowledgebase/article.aspx/9363/2180/how-to-create-and-maintain-mysql-databases-in-cpanel"
+          target="_blank">how to setup MySQL database in cPanel</a>&nbsp;if you are
+          not familiar with this.
+        </p>
+        <ol>
+          <li>Login to cPanel by accessing www.yourdomain.com/cpanel and navigate go
+          MySQL Databases.
+          </li>
+          <li>Create database first.
+          </li>
+          <li>Create user and setup your password.
+          </li>
+          <li>Add the user to database by selecting the database and the username.
+          </li>
+          <li>Open the file <strong>ci_adminlte_db.sql</strong> in database folder of package files and <strong>Import the Database.</strong> It will create all required database tables and sample content.
+          </li>
+        </ol>
+        <p>
+          Make sure you have checked All privileged when adding the user to
+          database.
+        </p>
+        <hr>
+         <h5>Change Database Settings</h5>
+        <p>Open your site main root folder then open: <strong>application/config/database.php</strong> Change your database name, username and password here,</p>
+        <img src="assets/database.jpg" />
+        <p>&nbsp; </p>
+        <hr>
+        <h5><strong>Setup base url</strong></h5>
+        <b>Go to application/config/config.php and setup $config['base_url']</b> where CI Admin LTE will be installed.
+        <p>You need to add your base url to this line:</p>
+        <pre style="box-sizing: border-box; font-weight: 700;">
+          $config['base_url'] = '';
+        </pre>
+          <p>Ex. If you are installing on <strong>subdomain</strong> you will set http://www.ci_adminlte.domain.com/</p>
+          <p>Ex. If you are installing on <strong>subfolder</strong> you will set http://www.domain.com/ci_adminlte/</p>
+          <p>Ex. If you are installing on the main domain you need to set just http://www.domain.com/</p>
+        <pre style="box-sizing: border-box; font-weight: 700;">
+          $config['base_url'] = 'http://www.domain.com/ci_adminlte/';
+        </pre>
+        <strong>NOTE:The url must ends with slash (/)</strong>      
+     
+    </section>
+
+    <section id="admin_panel">
+      <div class="page-header">
+        <h3>Administration Panel</h3>
+        <hr class="notop">
+      </div>
+        <h5>Admin URL / Access</h5>
+        <h6>yoursitename.com/admin<br>
+        Username: <strong>admin@admin.com</strong><br>
+        Password: <strong>admin</strong> </h6>
+        <p>The administrator module having all privileges about this entire project, he can update, delete, and modify the details about users</p>
+        <img src="assets/img/01_preview1.jpg" /><br><br>
+        <img src="assets/img/02_preview2.jpg" /><br><br>
+        <img src="assets/img/03_preview3.jpg" /><br><br>
+        <img src="assets/img/04_preview4.jpg" /><br><br>
+    </section>
+    
+    <section id="customize">
+      <div class="page-header">
+        <h3>Customization</h3>
+        <hr class="notop">
+      </div>
+      <h4>Header Adjustment</h4>
+      <p>Go to the site folder ci_adminlte and open file application\views\admin\include\navbar.php. Here you can set logo, naviation and Account Buttons.</p>
+      <img src="assets/img/header.jpg" /><br><br>
+      <h4>Sidebar Adjustment</h4>
+      <p>Go to the site folder ci_adminlte and open file application\views\admin\include\sidebar.php. Here you can add/remove/edit the main-menu and dropdown-menu</p>
+      <img src="assets/img/sidebar.jpg" /><br><br>
+      <h4>Routes File</h4>
+      <p>If you want to change the Route file go to main_directory/application/config/route.php here you can change the route according to your requirements</p>
+      <img src="assets/img/route.jpg" /><br><br>
+      <h4>My Controller File</h4>
+      <p>If you want to change the MY Controller file go to main_directory/application/core/MY_Controller.php and edit it accoring to your needs.</p>
+      <img src="assets/img/my_controller.jpg" /><br><br>
+    </section>
+
+    <section id="version">
+      <div class="page-header">
+        <h3>Version</h3>
+        <hr class="notop">
+      </div>
+      <p>Version v1.0</p>
+    </section>
+
+    <section id="support">
+      <div class="page-header">
+        <h3>Support</h3>
+        <hr class="notop">
+      </div>
+      <p>For any query or problem feel free to contact us on Email: <a href="mailto:codeglamour1@gmail.com">codeglamour1@gmail.com</a></p>
+    </section>
+
+    <section id="css_stucture" style="padding-top: 70px; color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif;">
+    <div class="page-header" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline;"> &nbsp;</div>
+  </section>
+  <section id="thanks">
+    <div class="page-header">
+      <h3>Thanks</h3>
+      <hr class="notop">
+    </div>
+    <h4 id="thanks_span_style"margin_0px_padding_0px_border_0px_outline_0px_font_weight_700_font_style_inherit_font_family_inherit_vertical_align_baseline"once_again_thankyou_for_for_purchasing_one_of_our_theme_span"><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">Once again thank you for purchasing one of our Product</span></h4>
+    <h2 style="margin: 0px 0px 18px; padding: 0px; border: 0px; outline: 0px; font-weight: 100; font-size: 20px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);"> Best Regards</h2>
+    <h3 style="margin: 18px 0px 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 100; font-size: 26px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">Codeglamour</h3>
+  </section>
+  <hr />
+  <footer>
+    <p>Copyright Codeglamour 2017 made with the <a href="#">Documenter v1.0</a></p>
+  </footer>
+</div>
+<!-- /container --> 
+
+<!-- Le javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script>document.createElement('section');var duration='500',easing='swing';</script> 
+<script src="assets/js/jquery.js"></script> 
+<script src="assets/js/jquery.scrollTo.js"></script> 
+<script src="assets/js/jquery.easing.js"></script> 
+<script src="assets/js/scripts.js"></script> 
+<script src="assets/js/google-code-prettify/prettify.js"></script> 
+<script src="assets/js/bootstrap-min.js"></script>
+</body>
+</html>
