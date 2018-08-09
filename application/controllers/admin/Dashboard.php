@@ -8,7 +8,7 @@
 		}
 
 		public function index(){
-			$data['title'] = 'Dashboard 1';
+			$data['title'] = 'CEBU BOSS';
 			$data['view'] = 'admin/dashboard/index';
 			$this->load->view('admin/layout', $data);
 		}

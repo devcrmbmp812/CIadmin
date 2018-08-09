@@ -54,8 +54,20 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
             <ul class="treeview-menu">
               <li id="add_user"><a href="<?= base_url('admin/users/add'); ?>"><i class="fa fa-circle-o"></i> Add User</a></li>
               <li id="view_users" class=""><a href="<?= base_url('admin/users'); ?>"><i class="fa fa-circle-o"></i> View Users</a></li>
-			  <li id="user_group" class=""><a href="<?= base_url('admin/group'); ?>"><i class="fa fa-circle-o"></i> User Groups</a></li>
+              <li id="user_group" class=""><a href="<?= base_url('admin/group'); ?>"><i class="fa fa-circle-o"></i> User Groups</a></li>
             </ul>
+          </li>
+          <li id="admins" class="treeview">
+              <a href="#">
+                  <i class="fa fa-dashboard"></i> <span>Admins</span>
+                  <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+              </a>
+              <ul class="treeview-menu">
+                  <li id="add_admin"><a href="<?= base_url('admin/admins/add'); ?>"><i class="fa fa-circle-o"></i>Add Admin</a></li>
+                  <li id="view_admins" class=""><a href="<?= base_url('admin/admins'); ?>"><i class="fa fa-circle-o"></i>View Admins</a></li>
+              </ul>
           </li>
           <li id="adminlte" class="treeview">
           <a href="#">

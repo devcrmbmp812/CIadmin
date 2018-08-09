@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		  <title><?=isset($title)?$title.' - Codeigniter AdminLTE':'Codeigniter AdminLTE' ?></title>
+		  <title><?=isset($title)?$title.' - Admin':'Codeigniter AdminLTE' ?></title>
 		  <meta name="keywords" content="codeigniter adminlte, adminlte, admin lte, codeigniter admin lte, codeigniter adminlte integration" />
 
 		  <!-- Tell the browser to be responsive to screen width -->
