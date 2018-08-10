@@ -112,14 +112,14 @@
             header("Content-Type: application/csv; ");
 
             // get data
-            $admin_data = $this->agent_model->get_all_agents_for_csv();
+            $agent_data = $this->agent_model->get_all_agents_for_csv();
 
             // file creation
             $file = fopen('php://output', 'w');
 
             $header = array("ID", "Agent Name", "Address", "Mobile Number", "Unpaid", "Paid", "Coordinator ID");
             fputcsv($file, $header);
-            foreach ($admin_data as $key=>$line){
+            foreach ($agent_data as $key=>$line){
                 fputcsv($file,$line);
             }
             fclose($file);

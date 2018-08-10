@@ -17,4 +17,9 @@
         return $CI->db->get_where('coordinators', array('id' => $id))->row_array()['name'];
     }
 
+    function getAgentName($id) {
+        $CI = & get_instance();
+        return $CI->db->get_where('agents', array('id' => $id))->row_array()['name'];
+    }
+
 ?>    
