@@ -29,5 +29,10 @@
             return true;
         }
 
+        public function get_distributor_groups() {
+            $query = $this->db->get('distributors');
+            return $result = $query->result_array();
+        }
+
     }
 ?>

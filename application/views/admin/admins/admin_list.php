@@ -27,6 +27,7 @@
                     <th>Admin Name</th>
                     <th>Address</th>
                     <th>Mobile No.</th>
+                    <th>Distributor</th>
                     <th style="width: 100px;" class="text-right">Option</th>
                 </tr>
                 </thead>
@@ -36,6 +37,7 @@
                         <td><?= $row['name']; ?></td>
                         <td><?= $row['address']; ?></td>
                         <td><?= $row['mobile']; ?></td>
+                        <td><span class="btn btn-primary btn-flat btn-xs bg-green"><?= getDistributorName($row['distributor_id']) ?><span></td>
                         <td class="text-right"><a href="<?= base_url('admin/admins/edit/'.$row['id']); ?>" class="btn btn-info btn-flat btn-xs">Edit</a>
                             <a data-href="<?= base_url('admin/admins/del/'.$row['id']); ?>" class="btn btn-danger btn-flat btn-xs" data-toggle="modal" data-target="#confirm-delete">Delete</a>
                         </td>

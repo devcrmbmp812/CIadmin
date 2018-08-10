@@ -22,6 +22,7 @@
                 $this->form_validation->set_rules('name', 'Admin Name', 'trim|min_length[5]|required');
                 $this->form_validation->set_rules('address', 'Address', 'trim|required');
                 $this->form_validation->set_rules('mobile_no', 'Number', 'trim|required');
+                $this->form_validation->set_rules('distributor', 'Distributor', 'trim|required');
 
                 if ($this->form_validation->run() == FALSE ) {
                     $data['title'] = 'Add Admin';
@@ -32,6 +33,7 @@
                         'name' => $this->input->post('name'),
                         'address' => $this->input->post('address'),
                         'mobile' => $this->input->post('mobile_no'),
+                        'distributor_id' => $this->input->post('distributor'),
                     );
                     $data = $this->security->xss_clean($data);
                     $result = $this->admin_model->add_admin($data);
@@ -41,6 +43,7 @@
                     }
                 }
             } else {
+                $data['distributor_groups'] = $this->admin_model->get_distributor_groups();
                 $data['title'] = 'Add Admin';
                 $data['view'] = 'admin/admins/admin_add';
                 $this->load->view('admin/layout', $data);
@@ -52,6 +55,7 @@
                 $this->form_validation->set_rules('name', 'Admin Name', 'trim|required');
                 $this->form_validation->set_rules('address', 'Address', 'trim|required');
                 $this->form_validation->set_rules('mobile_no', 'Mobile Number', 'trim|required');
+                $this->form_validation->set_rules('distributor', 'Distributor', 'trim|required');
 
                 if ($this->form_validation->run() == FALSE) {
                     $data['admin'] = $this->admin_model->get_admin_by_id($id);
@@ -64,6 +68,7 @@
                         'name' => $this->input->post('name'),
                         'address' => $this->input->post('address'),
                         'mobile' => $this->input->post('mobile_no'),
+                        'distributor_id' => $this->input->post('distributor'),
                     );
                     $data = $this->security->xss_clean($data);
                     $result = $this->admin_model->edit_admin($data, $id);
@@ -74,6 +79,7 @@
                 }
             } else {
                 $data['admin'] = $this->admin_model->get_admin_by_id($id);
+                $data['distributor_groups'] = $this->admin_model->get_distributor_groups();
                 $data['title'] = 'Edit Admin';
                 $data['view'] = 'admin/admins/admin_edit';
                 $this->load->view('admin/layout', $data);

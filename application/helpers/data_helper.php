@@ -7,4 +7,9 @@
     	return $CI->db->get_where('ci_user_groups', array('id' => $id))->row_array()['group_name'];
     }
 
+    function getDistributorName($id) {
+        $CI = & get_instance();
+        return $CI->db->get_where('distributors', array('id' => $id))->row_array()['name'];
+    }
+
 ?>    

@@ -51,6 +51,19 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="role" class="col-sm-2 control-label">Select Distributor</label>
+
+                        <div class="col-sm-9">
+                            <select name="group" class="form-control">
+                                <option value="">Select Distributor</option>
+                                <?php foreach($distributor_groups as $group): ?>
+                                    <option value="<?= $group['id']; ?>"><?= $group['name']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <div class="col-md-11">
                             <input type="submit" name="submit" value="Add Admin" class="btn btn-info pull-right">
                         </div>
