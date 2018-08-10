@@ -12,4 +12,9 @@
         return $CI->db->get_where('distributors', array('id' => $id))->row_array()['name'];
     }
 
+    function getCoordinatorName($id) {
+        $CI = & get_instance();
+        return $CI->db->get_where('coordinators', array('id' => $id))->row_array()['name'];
+    }
+
 ?>    

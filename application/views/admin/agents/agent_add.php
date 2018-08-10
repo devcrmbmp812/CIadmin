@@ -3,10 +3,10 @@
         <div class="col-md-12">
             <div class="box box-body with-border">
                 <div class="col-md-6">
-                    <h4><i class="fa fa-plus"></i> &nbsp; Add New Admin</h4>
+                    <h4><i class="fa fa-plus"></i> &nbsp; Add New Agent</h4>
                 </div>
                 <div class="col-md-6 text-right">
-                    <a href="<?= base_url('admin/admins'); ?>" class="btn btn-success"><i class="fa fa-list"></i> Admins List</a>
+                    <a href="<?= base_url('admin/agents'); ?>" class="btn btn-success"><i class="fa fa-list"></i> Agents List</a>
                 </div>
             </div>
         </div>
@@ -26,9 +26,9 @@
                         </div>
                     <?php endif; ?>
 
-                    <?php echo form_open(base_url('admin/admins/add'), 'class="form-horizontal"');  ?>
+                    <?php echo form_open(base_url('admin/agents/add'), 'class="form-horizontal"');  ?>
                     <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Admin Name</label>
+                        <label for="name" class="col-sm-2 control-label">Agent Name</label>
 
                         <div class="col-sm-9">
                             <input type="text" name="name" class="form-control" id="name" placeholder="">
@@ -51,12 +51,20 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="role" class="col-sm-2 control-label">Select Distributor</label>
+                        <label for="limit" class="col-sm-2 control-label">Limit</label>
 
                         <div class="col-sm-9">
-                            <select name="distributor" class="form-control">
-                                <option value="">Select Distributor</option>
-                                <?php foreach($distributor_groups as $group): ?>
+                            <input type="number" name="limit" class="form-control" id="limit" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role" class="col-sm-2 control-label">Select Coordinator</label>
+
+                        <div class="col-sm-9">
+                            <select name="coordinator" class="form-control">
+                                <option value="">Select Coordinator</option>
+                                <?php foreach($coordinator_groups as $group): ?>
                                     <option value="<?= $group['id']; ?>"><?= $group['name']; ?></option>
                                 <?php endforeach; ?>
                             </select>
@@ -65,7 +73,7 @@
 
                     <div class="form-group">
                         <div class="col-md-11">
-                            <input type="submit" name="submit" value="Add Admin" class="btn btn-info pull-right">
+                            <input type="submit" name="submit" value="Add Agent" class="btn btn-info pull-right">
                         </div>
                     </div>
                     <?php echo form_close( ); ?>
