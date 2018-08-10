@@ -105,6 +105,18 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
                   <li id="view_bets" class=""><a href="<?= base_url('admin/betezs'); ?>"><i class="fa fa-circle-o"></i>View Betezs</a></li>
               </ul>
           </li>
+          <li id="coordinators" class="treeview">
+              <a href="#">
+                  <i class="fa fa-dashboard"></i> <span>Coordinators</span>
+                  <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+              </a>
+              <ul class="treeview-menu">
+                  <li id="add_coordinator"><a href="<?= base_url('admin/coordinators/add'); ?>"><i class="fa fa-circle-o"></i>Add Coordinators</a></li>
+                  <li id="view_coordinators" class=""><a href="<?= base_url('admin/coordinators'); ?>"><i class="fa fa-circle-o"></i>View Coordinators</a></li>
+              </ul>
+          </li>
           <li id="adminlte" class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
