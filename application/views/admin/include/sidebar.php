@@ -126,7 +126,19 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
               </a>
               <ul class="treeview-menu">
                   <li id="add_distributor"><a href="<?= base_url('admin/distributors/add'); ?>"><i class="fa fa-circle-o"></i>Add Distributors</a></li>
-                  <li id="view_distributor" class=""><a href="<?= base_url('admin/distributors'); ?>"><i class="fa fa-circle-o"></i>View Distributors</a></li>
+                  <li id="view_distributors" class=""><a href="<?= base_url('admin/distributors'); ?>"><i class="fa fa-circle-o"></i>View Distributors</a></li>
+              </ul>
+          </li>
+          <li id="results" class="treeview">
+              <a href="#">
+                  <i class="fa fa-dashboard"></i> <span>Results</span>
+                  <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+              </a>
+              <ul class="treeview-menu">
+                  <li id="add_result"><a href="<?= base_url('admin/results/add'); ?>"><i class="fa fa-circle-o"></i>Add Results</a></li>
+                  <li id="view_results" class=""><a href="<?= base_url('admin/results'); ?>"><i class="fa fa-circle-o"></i>View Results</a></li>
               </ul>
           </li>
           <li id="adminlte" class="treeview">
