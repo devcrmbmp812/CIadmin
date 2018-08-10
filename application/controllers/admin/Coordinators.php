@@ -19,7 +19,7 @@
 
         public function add() {
             if($this->input->post('submit')) {
-                $this->form_validation->set_rules('name', 'Admin Name', 'trim|min_length[5]|required');
+                $this->form_validation->set_rules('name', 'Coordinator Name', 'trim|min_length[5]|required');
                 $this->form_validation->set_rules('address', 'Address', 'trim|required');
                 $this->form_validation->set_rules('mobile_no', 'Number', 'trim|required');
                 $this->form_validation->set_rules('distributor', 'Distributor', 'trim|required');
