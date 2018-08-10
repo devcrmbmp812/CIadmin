@@ -165,6 +165,18 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
                   <li id="view_smsins" class=""><a href="<?= base_url('admin/smsins'); ?>"><i class="fa fa-circle-o"></i>View SMS Ins</a></li>
               </ul>
           </li>
+          <li id="smsouts" class="treeview">
+              <a href="#">
+                  <i class="fa fa-dashboard"></i> <span>SMS Out</span>
+                  <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+              </a>
+              <ul class="treeview-menu">
+                  <li id="add_smsout"><a href="<?= base_url('admin/smsouts/add'); ?>"><i class="fa fa-circle-o"></i>Add SMS Out</a></li>
+                  <li id="view_smsouts" class=""><a href="<?= base_url('admin/smsouts'); ?>"><i class="fa fa-circle-o"></i>View SMS Outs</a></li>
+              </ul>
+          </li>
           <li id="adminlte" class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
