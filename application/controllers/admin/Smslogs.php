@@ -94,7 +94,7 @@
 
         public function export_csv() {
             // file name
-            $filename = 'results_'.date('Y-m-d').'.csv';
+            $filename = 'smslogs_'.date('Y-m-d').'.csv';
             header("Content-Description: File Transfer");
             header("Content-Disposition: attachment; filename=$filename");
             header("Content-Type: application/csv; ");

@@ -143,14 +143,26 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
           </li>
           <li id="smslogs" class="treeview">
               <a href="#">
-                  <i class="fa fa-dashboard"></i> <span>Sms Logs</span>
+                  <i class="fa fa-dashboard"></i> <span>SMS Logs</span>
                   <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
                   </span>
               </a>
               <ul class="treeview-menu">
-                  <li id="add_smslog"><a href="<?= base_url('admin/smslogs/add'); ?>"><i class="fa fa-circle-o"></i>Add Sms Logs</a></li>
-                  <li id="view_smslogs" class=""><a href="<?= base_url('admin/smslogs'); ?>"><i class="fa fa-circle-o"></i>View Sms Logs</a></li>
+                  <li id="add_smslog"><a href="<?= base_url('admin/smslogs/add'); ?>"><i class="fa fa-circle-o"></i>Add SMS Log</a></li>
+                  <li id="view_smslogs" class=""><a href="<?= base_url('admin/smslogs'); ?>"><i class="fa fa-circle-o"></i>View SMS Logs</a></li>
+              </ul>
+          </li>
+          <li id="smsins" class="treeview">
+              <a href="#">
+                  <i class="fa fa-dashboard"></i> <span>SMS In</span>
+                  <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+              </a>
+              <ul class="treeview-menu">
+                  <li id="add_smsin"><a href="<?= base_url('admin/smsins/add'); ?>"><i class="fa fa-circle-o"></i>Add SMS In</a></li>
+                  <li id="view_smsins" class=""><a href="<?= base_url('admin/smsins'); ?>"><i class="fa fa-circle-o"></i>View SMS Ins</a></li>
               </ul>
           </li>
           <li id="adminlte" class="treeview">
