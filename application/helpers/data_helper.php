@@ -22,4 +22,4 @@
         return $CI->db->get_where('agents', array('id' => $id))->row_array()['name'];
     }
 
-?>    
+?>

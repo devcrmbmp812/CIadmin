@@ -38,7 +38,7 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
           </a>
           <ul class="treeview-menu">
             <li id="dashboard1"><a href="<?= base_url('admin/dashboard'); ?>"><i class="fa fa-circle-o"></i> Dashboard</a></li>
-            <li id="dashboard2"><a href="<?= base_url('admin/dashboard2/'); ?>"><i class="fa fa-circle-o"></i> Dashboard V2</a></li>
+<!--            <li id="dashboard2"><a href="--><?//= base_url('admin/dashboard2/'); ?><!--"><i class="fa fa-circle-o"></i> Dashboard V2</a></li>-->
           </ul>
         </li>
       </ul>
@@ -177,7 +177,7 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
                   <li id="view_smsouts" class=""><a href="<?= base_url('admin/smsouts'); ?>"><i class="fa fa-circle-o"></i>View SMS Outs</a></li>
               </ul>
           </li>
-          <li id="adminlte" class="treeview">
+          <!--<li id="adminlte" class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Layout Options</span>
@@ -305,10 +305,10 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
             <li id="blank-page"><a href="<?= base_url('adminlte/blank'); ?>"><i class="fa fa-circle-o"></i> Blank Page</a></li>
             <li id="pace"><a href="<?= base_url('adminlte/pace'); ?>"><i class="fa fa-circle-o"></i> Pace Page</a></li>
           </ul>
-        </li>
+        </li>-->
       </ul>
 
-      <ul class="sidebar-menu">
+      <!--<ul class="sidebar-menu">
         <li id="export" class="treeview">
             <a href="#">
               <i class="fa fa-life-ring"></i> <span>Backup & Export</span>
@@ -320,7 +320,7 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
               <li class=""><a href="<?= base_url('admin/export'); ?>"><i class="fa fa-circle-o"></i> Database Backup </a></li>
             </ul>
           </li>
-      </ul>  
+      </ul>
 
       <ul class="sidebar-menu">
         <li class="treeview">
@@ -363,7 +363,7 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
 
-      </ul>
+      </ul>-->
 
 
     </section>

@@ -1,16 +1,14 @@
 <?php
-	class MY_Controller extends CI_Controller
+class MY_Controller extends CI_Controller
+{
+	function __construct()
 	{
-		function __construct()
-		{
-			parent::__construct();
-			if(!$this->session->has_userdata('is_admin_login'))
-			{
-				redirect('admin/auth/login');
-			}
-			
-		}
-	}
-?>
+		parent::__construct();
 
-    
+		if(!$this->session->has_userdata('is_admin_login'))
+		{
+			redirect('admin/auth/login');
+		}
+
+	}
+}
