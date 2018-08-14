@@ -47,7 +47,7 @@
 <!--                        <td>--><?//= $row['bet_code']; ?><!--</td>-->
 <!--                        <td>--><?//= $row['bet_text']; ?><!--</td>-->
 <!--                        <td>--><?//= $row['text_code']; ?><!--</td>-->
-                        <td><span class="btn btn-primary btn-flat btn-xs bg-green"><?= getAgentName($row['agent_id']) ?><span></td>
+<!--                        <td><span class="btn btn-primary btn-flat btn-xs bg-green">--><?//= getAgentName($row['agent_id']) ?><!--<span></td>-->
 <!--                        <td class="text-right"><a href="--><?//= base_url('admin/bets/edit/'.$row['id']); ?><!--" class="btn btn-info btn-flat btn-xs">Edit</a>-->
 <!--                            <a data-href="--><?//= base_url('admin/bets/del/'.$row['id']); ?><!--" class="btn btn-danger btn-flat btn-xs" data-toggle="modal" data-target="#confirm-delete">Delete</a>-->
 <!--                        </td>-->
