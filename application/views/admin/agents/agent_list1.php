@@ -92,5 +92,5 @@
 </script>
 
 <script>
-    $("#view_users").addClass('active');
+    $("#view_agents").addClass('active');
 </script>

@@ -4,6 +4,8 @@
 		  <title><?=isset($title)?$title.' - Admin':'Codeigniter AdminLTE' ?></title>
 		  <meta name="keywords" content="codeigniter adminlte, adminlte, admin lte, codeigniter admin lte, codeigniter adminlte integration" />
 
+          <meta name="<?= $this->security->get_csrf_token_name()?>" content="<?= $this->security->get_csrf_hash();?>">
+
 		  <!-- Tell the browser to be responsive to screen width -->
 		  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		  <!-- Bootstrap 3.3.6 -->

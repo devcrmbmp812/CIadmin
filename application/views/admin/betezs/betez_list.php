@@ -98,5 +98,5 @@
 </script>
 
 <script>
-    $("#view_users").addClass('active');
+    $("#view_betezs").addClass('active');
 </script>

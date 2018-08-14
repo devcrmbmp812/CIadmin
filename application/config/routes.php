@@ -54,6 +54,7 @@ $route['default_controller'] = 'welcome';
 // setting route for admin
 $route['admin'] = 'admin/auth';
 
+
 $route['admin/dashboard2'] = 'admin/dashboard/index2';
 
 $route['adminlte'] = 'admin/auth';

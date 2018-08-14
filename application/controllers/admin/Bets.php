@@ -187,5 +187,43 @@
             fclose($file);
             exit;
         }
+
+        public function bet_ajax_list() {
+
+            $list = $this->bet_model->get_all_bets();
+            $data = array();
+            $no = $_POST['start'];
+            foreach ($list as $person) {
+                $no++;
+                $row = array();
+                $row[] = $person->bet_date;
+                $row[] = $person->bet_draw;
+                $row[] = $person->bet_amt;
+                $row[] = $person->bet_number;
+                $row[] = $person->mobile;
+                $row[] = $person->bet_code;
+                $row[] = $person->bet_text;
+                $row[] = $person->text_code;
+
+                //add html for action
+//                $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_person('."'".$person->id."'".')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+//            <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Delete" onclick="delete_person('."'".$person->id."'".')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+//            <a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_person('."'".$person->id."'".')"><i class="glyphicon glyphicon-file"></i> View</a>';
+/*                $row[] = '<a href="<?= base_url(\'admin/bets/edit/\'.$person->id); ?>" class="btn btn-info btn-flat btn-xs">Edit</a>*/
+/*                            <a data-href="<?= base_url(\'admin/bets/del/\'.$person->id); ?>" class="btn btn-danger btn-flat btn-xs" data-toggle="modal" data-target="#confirm-delete">Delete</a>';*/
+
+                $data[] = $row;
+            }
+
+            $output = array(
+                "draw" => $_POST['draw'],
+                "recordsTotal" => $this->bet_model->count_all(),
+                "recordsFiltered" => $this->bet_model->count_filtered(),
+                "data" => $data,
+            );
+            //output to json format
+            echo json_encode($output);
+
+        }
     }
 ?>

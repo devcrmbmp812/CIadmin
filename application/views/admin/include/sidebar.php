@@ -101,8 +101,8 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
                   </span>
               </a>
               <ul class="treeview-menu">
-                  <li id="add_bet"><a href="<?= base_url('admin/betezs/add'); ?>"><i class="fa fa-circle-o"></i>Add Betez</a></li>
-                  <li id="view_bets" class=""><a href="<?= base_url('admin/betezs'); ?>"><i class="fa fa-circle-o"></i>View Betezs</a></li>
+                  <li id="add_betez"><a href="<?= base_url('admin/betezs/add'); ?>"><i class="fa fa-circle-o"></i>Add Betez</a></li>
+                  <li id="view_betezs" class=""><a href="<?= base_url('admin/betezs'); ?>"><i class="fa fa-circle-o"></i>View Betezs</a></li>
               </ul>
           </li>
           <li id="coordinators" class="treeview">

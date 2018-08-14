@@ -21,7 +21,7 @@
     <div class="box border-top-solid">
         <!-- /.box-header -->
         <div class="box-body table-responsive">
-            <table id="example1" class="table table-bordered table-striped ">
+            <table id="example1" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
                     <th>Bet Date</th>
@@ -32,28 +32,28 @@
                     <th>Bet Code</th>
                     <th>Bet Text</th>
                     <th>Text Code</th>
-                    <th>Agent</th>
-                    <th style="width: 100px;" class="text-right">Option</th>
+<!--                    <th>Agent</th>-->
+<!--                    <th style="width: 100px;" class="text-right">Option</th>-->
                 </tr>
                 </thead>
-                <tbody>
-                <?php foreach($all_bets as $row): ?>
-                    <tr>
-                        <td><?= $row['bet_date']; ?></td>
-                        <td><?= $row['bet_draw']; ?></td>
-                        <td><?= $row['bet_amt']; ?></td>
-                        <td><?= $row['bet_number']; ?></td>
-                        <td><?= $row['mobile']; ?></td>
-                        <td><?= $row['bet_code']; ?></td>
-                        <td><?= $row['bet_text']; ?></td>
-                        <td><?= $row['text_code']; ?></td>
-                        <td><span class="btn btn-primary btn-flat btn-xs bg-green"><?= getAgentName($row['agent_id']) ?><span></td>
-                        <td class="text-right"><a href="<?= base_url('admin/bets/edit/'.$row['id']); ?>" class="btn btn-info btn-flat btn-xs">Edit</a>
-                            <a data-href="<?= base_url('admin/bets/del/'.$row['id']); ?>" class="btn btn-danger btn-flat btn-xs" data-toggle="modal" data-target="#confirm-delete">Delete</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-                </tbody>
+<!--                <tbody>-->
+<!--                --><?php //foreach($all_bets as $row): ?>
+<!--                    <tr>-->
+<!--                        <td>--><?//= $row['bet_date']; ?><!--</td>-->
+<!--                        <td>--><?//= $row['bet_draw']; ?><!--</td>-->
+<!--                        <td>--><?//= $row['bet_amt']; ?><!--</td>-->
+<!--                        <td>--><?//= $row['bet_number']; ?><!--</td>-->
+<!--                        <td>--><?//= $row['mobile']; ?><!--</td>-->
+<!--                        <td>--><?//= $row['bet_code']; ?><!--</td>-->
+<!--                        <td>--><?//= $row['bet_text']; ?><!--</td>-->
+<!--                        <td>--><?//= $row['text_code']; ?><!--</td>-->
+<!--                        <td><span class="btn btn-primary btn-flat btn-xs bg-green">--><?//= getAgentName($row['agent_id']) ?><!--<span></td>-->
+<!--                        <td class="text-right"><a href="--><?//= base_url('admin/bets/edit/'.$row['id']); ?><!--" class="btn btn-info btn-flat btn-xs">Edit</a>-->
+<!--                            <a data-href="--><?//= base_url('admin/bets/del/'.$row['id']); ?><!--" class="btn btn-danger btn-flat btn-xs" data-toggle="modal" data-target="#confirm-delete">Delete</a>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                --><?php //endforeach; ?>
+<!--                </tbody>-->
 
             </table>
         </div>
@@ -89,8 +89,59 @@
 <script src="<?= base_url() ?>public/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?= base_url() ?>public/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script>
+    var table;
+    var _BASE_URL_ = "<?=base_url()?>";
+    var _CSRF_NAME_ = "<?=$this->security->get_csrf_token_name()?>";
+    var _CSRF_VAlUE = "<?= $this->security->get_csrf_hash()?>";
+
+    var getCookie = function(name)
+    {
+        var re = new RegExp(name + "=([^;]+)");
+        var value = re.exec(document.cookie);
+        return (value != null) ? unescape(value[1]) : null;
+    };
+
     $(function () {
-        $("#example1").DataTable();
+
+        console.log("<?php echo site_url('admin/bets/bet_ajax_list')?>");
+        console.log($('meta[name="<?= $this->security->get_csrf_token_name()?>"]').attr('content'));
+        console.log("<?php echo $this->security->get_csrf_hash(); ?>");
+
+        table = $('#example1').DataTable({
+
+            "processing": true, //Feature control the processing indicator.
+            "serverSide": true, //Feature control DataTables' server-side processing mode.\
+            "order": [], //Initial no order.
+
+            // Load data for the table's content from an Ajax source
+            "ajax": {
+                "url": "<?php echo site_url('admin/bets/bet_ajax_list')?>",
+                "type": "POST",
+                data: function(dtRequest) {
+                    dtRequest[ 'csrf_test_name'] = _CSRF_VAlUE;
+                    return dtRequest;
+                },
+                dataFilter:function(response) {
+                    console.log(response);
+                    return response;
+                },
+                error: function(err){
+                    console.log(err);
+                },
+                complete: function (res) {
+                    _CSRF_VAlUE = getCookie('csrf_cookie_name');
+                }
+            },
+
+            //Set column definition initialisation properties.
+            "columnDefs": [
+                {
+                    "targets": [ -1 ], //last column
+                    "orderable": false, //set not orderable
+                },
+            ],
+
+        });
     });
 </script>
 <script type="text/javascript">
@@ -100,5 +151,5 @@
 </script>
 
 <script>
-    $("#view_users").addClass('active');
+    $("#view_bets").addClass('active');
 </script>

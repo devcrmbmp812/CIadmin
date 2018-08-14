@@ -88,5 +88,5 @@
 </script>
 
 <script>
-    $("#view_users").addClass('active');
+    $("#view_results").addClass('active');
 </script>
