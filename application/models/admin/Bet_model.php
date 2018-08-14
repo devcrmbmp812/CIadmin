@@ -2,7 +2,7 @@
     class Bet_model extends CI_Model{
 
         var $table = 'bet';
-        var $column = array('bet_date','bet_draw','bet_amt','bet_number','mobile','bet_code','bet_text','text_code');
+        var $column = array('bet_date','bet_draw','bet_amt','bet_number','mobile','bet_code','bet_text','text_code', 'agent_id');
         var $order = array('id' => 'desc');
 
         public function __construct()
@@ -50,6 +50,11 @@
             $this->_get_datatables_query();
             $query = $this->db->get();
             return $query->num_rows();
+        }
+
+        public function get_pdf_all_bets() {
+            $query = $this->db->get('bet');
+            return $result = $query->result_array();
         }
 
         public function get_all_bets() {

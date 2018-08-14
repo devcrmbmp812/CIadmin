@@ -32,8 +32,8 @@
                     <th>Bet Code</th>
                     <th>Bet Text</th>
                     <th>Text Code</th>
-<!--                    <th>Agent</th>-->
-<!--                    <th style="width: 100px;" class="text-right">Option</th>-->
+                    <th>Agent</th>
+                    <th style="width: 100px;" class="text-right">Option</th>
                 </tr>
                 </thead>
 <!--                <tbody>-->
@@ -47,7 +47,7 @@
 <!--                        <td>--><?//= $row['bet_code']; ?><!--</td>-->
 <!--                        <td>--><?//= $row['bet_text']; ?><!--</td>-->
 <!--                        <td>--><?//= $row['text_code']; ?><!--</td>-->
-<!--                        <td><span class="btn btn-primary btn-flat btn-xs bg-green">--><?//= getAgentName($row['agent_id']) ?><!--<span></td>-->
+                        <td><span class="btn btn-primary btn-flat btn-xs bg-green"><?= getAgentName($row['agent_id']) ?><span></td>
 <!--                        <td class="text-right"><a href="--><?//= base_url('admin/bets/edit/'.$row['id']); ?><!--" class="btn btn-info btn-flat btn-xs">Edit</a>-->
 <!--                            <a data-href="--><?//= base_url('admin/bets/del/'.$row['id']); ?><!--" class="btn btn-danger btn-flat btn-xs" data-toggle="modal" data-target="#confirm-delete">Delete</a>-->
 <!--                        </td>-->
@@ -90,8 +90,7 @@
 <script src="<?= base_url() ?>public/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script>
     var table;
-    var _BASE_URL_ = "<?=base_url()?>";
-    var _CSRF_NAME_ = "<?=$this->security->get_csrf_token_name()?>";
+
     var _CSRF_VAlUE = "<?= $this->security->get_csrf_hash()?>";
 
     var getCookie = function(name)
