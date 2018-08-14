@@ -196,6 +196,7 @@
             foreach ($list as $person) {
                 $no++;
                 $row = array();
+                $row[] = $person->id;
                 $row[] = $person->bet_date;
                 $row[] = $person->bet_draw;
                 $row[] = $person->bet_amt;

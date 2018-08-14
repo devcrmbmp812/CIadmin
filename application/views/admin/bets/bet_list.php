@@ -24,6 +24,7 @@
             <table id="example1" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Bet Date</th>
                     <th>Bet Draw</th>
                     <th>Bet Amount</th>
@@ -36,25 +37,6 @@
                     <th style="width: 100px;" class="text-right">Option</th>
                 </tr>
                 </thead>
-<!--                <tbody>-->
-<!--                --><?php //foreach($all_bets as $row): ?>
-<!--                    <tr>-->
-<!--                        <td>--><?//= $row['bet_date']; ?><!--</td>-->
-<!--                        <td>--><?//= $row['bet_draw']; ?><!--</td>-->
-<!--                        <td>--><?//= $row['bet_amt']; ?><!--</td>-->
-<!--                        <td>--><?//= $row['bet_number']; ?><!--</td>-->
-<!--                        <td>--><?//= $row['mobile']; ?><!--</td>-->
-<!--                        <td>--><?//= $row['bet_code']; ?><!--</td>-->
-<!--                        <td>--><?//= $row['bet_text']; ?><!--</td>-->
-<!--                        <td>--><?//= $row['text_code']; ?><!--</td>-->
-<!--                        <td><span class="btn btn-primary btn-flat btn-xs bg-green">--><?//= getAgentName($row['agent_id']) ?><!--<span></td>-->
-<!--                        <td class="text-right"><a href="--><?//= base_url('admin/bets/edit/'.$row['id']); ?><!--" class="btn btn-info btn-flat btn-xs">Edit</a>-->
-<!--                            <a data-href="--><?//= base_url('admin/bets/del/'.$row['id']); ?><!--" class="btn btn-danger btn-flat btn-xs" data-toggle="modal" data-target="#confirm-delete">Delete</a>-->
-<!--                        </td>-->
-<!--                    </tr>-->
-<!--                --><?php //endforeach; ?>
-<!--                </tbody>-->
-
             </table>
         </div>
         <!-- /.box-body -->
@@ -136,7 +118,7 @@
             "columnDefs": [
                 {
                     "targets": [ -1 ], //last column
-                    "orderable": false, //set not orderable
+                    "orderable": true, //set not orderable
                 },
             ],
 

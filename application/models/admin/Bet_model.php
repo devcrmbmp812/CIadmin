@@ -2,7 +2,7 @@
     class Bet_model extends CI_Model{
 
         var $table = 'bet';
-        var $column = array('bet_date','bet_draw','bet_amt','bet_number','mobile','bet_code','bet_text','text_code', 'agent_id');
+        var $column = array('id','bet_date','bet_draw','bet_amt','bet_number','mobile','bet_code','bet_text','text_code', 'agent_id');
         var $order = array('id' => 'desc');
 
         public function __construct()
