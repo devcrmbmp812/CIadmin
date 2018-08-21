@@ -7,16 +7,13 @@
     <div class="row">
         <div class="col-md-12">
             <div class="box box-body">
-                <div class="col-md-6">
-                    <h4><i class="fa fa-list"></i> &nbsp; Result List </h4>
+                <div class="col-md-4">
+                    <h4><i class="fa fa-list"></i> &nbsp; Result Date Filter </h4>
                 </div>
-                <div class="col-md-6 text-right">
-                    <div class="btn-group margin-bottom-20">
-                        <a href="<?= base_url('admin/results/create_results_pdf'); ?>" class="btn btn-success">Export as PDF</a>
-                        <a href="<?= base_url('admin/results/export_csv'); ?>" class="btn btn-success">Export as CSV</a>
-                    </div>
-                </div>
+                <div class="col-md-4">
+                    <i class="fa fa-search"></i> &nbsp;&nbsp;<input class="datepicker" id="searchdate" value="">
 
+                </div>
             </div>
         </div>
     </div>
@@ -30,7 +27,6 @@
                     <th>Draw Time</th>
                     <th>Draw Date</th>
                     <th>Result</th>
-                    <th style="width: 100px;" class="text-right">Option</th>
                 </tr>
                 </thead>
             </table>
@@ -39,29 +35,6 @@
     </div>
     <!-- /.box -->
 </section>
-
-
-<!-- Modal -->
-<div id="confirm-delete" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Delete Dialog</h4>
-            </div>
-            <div class="modal-body">
-                <p>As you sure you want to delete.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <a class="btn btn-danger btn-ok">Yes</a>
-            </div>
-        </div>
-
-    </div>
-</div>
-
 
 <!-- DataTables -->
 <script src="<?= base_url() ?>public/plugins/datatables/jquery.dataTables.min.js"></script>
@@ -91,10 +64,11 @@
 
             // Load data for the table's content from an Ajax source
             "ajax": {
-                "url": "<?php echo site_url('admin/results/result_ajax_list')?>",
+                "url": "<?php echo site_url('admin/results/result_filter_ajax_list')?>",
                 "type": "POST",
                 data: function(dtRequest) {
                     dtRequest[ 'csrf_test_name'] = _CSRF_VAlUE;
+                    dtRequest['searchdate'] = $('#searchdate').val();
                     return dtRequest;
                 },
                 dataFilter:function(response) {
@@ -118,6 +92,15 @@
             ],
 
         });
+
+        $('.datepicker').datepicker({
+            format: 'yyyy-mm-dd',
+            startDate: '-3d'
+        }).on('changeDate', function(e) {
+            console.log($('#searchdate').val());
+            table.ajax.reload();
+        });
+
     });
 </script>
 <script type="text/javascript">

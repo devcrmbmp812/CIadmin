@@ -12,6 +12,7 @@
         public function index()
         {
             $data['all_results'] =  $this->result_model->get_all_results();
+            $data['today'] = date("Y-m-d");
             $data['title'] = 'Result List';
             $data['view'] = 'admin/results/result_list';
             $this->load->view('admin/layout', $data);
@@ -88,7 +89,7 @@
 
         public function create_results_pdf() {
             $this->load->helper('pdf_helper'); // loaded pdf helper
-            $data['all_results'] = $this->result_model->get_all_results();
+            $data['all_results'] = $this->result_model->get_pdf_all_results();
             $this->load->view('admin/results/results_pdf', $data);
         }
 
@@ -112,6 +113,67 @@
             }
             fclose($file);
             exit;
+        }
+
+        public function result_ajax_list() {
+
+            $list = $this->result_model->get_all_results();
+
+            $data = array();
+            $no = $_POST['start'];
+            foreach ($list as $person) {
+                $no++;
+                $row = array();
+                $row[] = $person->id;
+                $row[] = $person->drawtime;
+                $row[] = $person->drawdate;
+                $row[] = $person->result;
+                $row[] = '<a class="btn btn-sm btn-primary" href="'.base_url('admin/results/edit/').$person->id.' class="btn btn-info btn-flat btn-xs">Edit</a>'.'
+                            <a class="btn btn-sm btn-danger" data-href="'.base_url('admin/results/del/').$person->id.'" class="btn btn-danger btn-flat btn-xs" data-toggle="modal" data-target="#confirm-delete">Delete</a>';
+
+                $data[] = $row;
+            }
+
+            $output = array(
+                "draw" => $_POST['draw'],
+                "recordsTotal" => $this->result_model->count_all(),
+                "recordsFiltered" => $this->result_model->count_filtered(),
+                "data" => $data,
+            );
+            //output to json format
+            echo json_encode($output);
+        }
+
+        public function result_filter_ajax_list() {
+            if(isset($_POST['searchdate']) && $_POST['searchdate'] != '') {
+                $list = $this->result_model->get_results_searchdate();
+            } else {
+                $list = $this->result_model->get_all_results();
+            }
+
+            $data = array();
+            $no = $_POST['start'];
+            foreach ($list as $person) {
+                $no++;
+                $row = array();
+                $row[] = $person->id;
+                $row[] = $person->drawtime;
+                $row[] = $person->drawdate;
+                $row[] = $person->result;
+                $row[] = '<a class="btn btn-sm btn-primary" href="'.base_url('admin/results/edit/').$person->id.' class="btn btn-info btn-flat btn-xs">Edit</a>'.'
+                            <a class="btn btn-sm btn-danger" data-href="'.base_url('admin/results/del/').$person->id.'" class="btn btn-danger btn-flat btn-xs" data-toggle="modal" data-target="#confirm-delete">Delete</a>';
+
+                $data[] = $row;
+            }
+
+            $output = array(
+                "draw" => $_POST['draw'],
+                "recordsTotal" => $this->result_model->count_all($_POST['searchdate']),
+                "recordsFiltered" => $this->result_model->count_filtered($_POST['searchdate']),
+                "data" => $data,
+            );
+            //output to json format
+            echo json_encode($output);
         }
     }
 ?>

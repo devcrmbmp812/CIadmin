@@ -328,3 +328,12 @@ label{
 .border-top-solid{
     border-top: 3px solid #3c8dbc
 }
+
+.reporting-result {
+    margin-top: 25px;
+}
+.reporting-result-label {
+    margin-top: 29px;
+    font-size: 20px;
+
+}

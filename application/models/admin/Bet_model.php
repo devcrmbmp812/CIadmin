@@ -39,6 +39,68 @@
             }
         }
 
+        public function get_bet_statistics()
+        {
+            $query_str="select count(id) as num, bet_draw from bet group by bet_draw";
+            $query=$this->db->query($query_str);
+
+
+            foreach ($query->result_array() as $row)
+            {
+                $return[$row['bet_draw']] = $row['num'];
+            }
+
+            $this->db->from($this->table);
+            $query = $this->db->get();
+            $total_num = $query->num_rows();
+            $return['total'] = $total_num;
+            return $return;
+        }
+
+        public function get_bet_top10agents()
+        {
+            $query_str="SELECT b.agent_id, b.bet_draw, b.bet_date, sum(b.bet_amt) as amount, a.id, a.name, a.mobile, a.coordinator_id FROM bet b JOIN agents a ON b.agent_id = a.id where b.bet_draw = '11AM' GROUP BY b.agent_id ORDER BY amount desc limit 10";
+            $query=$this->db->query($query_str);
+
+            return $result = $query->result_array();
+        }
+
+        public function get_top100bet_numbers()
+        {
+            $query_str="SELECT SUM(bet_amt) AS amount, bet_number, bet_date,bet_draw FROM `bet` WHERE `bet_draw`='11AM' GROUP BY bet_number ORDER BY amount DESC LIMIT 100";
+            $query=$this->db->query($query_str);
+
+            return $result = $query->result_array();
+        }
+
+        public function get_smslogs100latests()
+        {
+            $query_str="SELECT * FROM sms_logs ORDER BY id DESC LIMIT 100";
+            $query=$this->db->query($query_str);
+
+            return $result = $query->result_array();
+        }
+
+        public function get_smsouts100latests()
+        {
+            $query_str="SELECT * FROM sms_out ORDER BY id DESC LIMIT 100";
+            $query=$this->db->query($query_str);
+
+            return $result = $query->result_array();
+        }
+
+        public function count_coordinators()
+        {
+            $this->db->from('coordinators');
+            return $this->db->count_all_results();
+        }
+
+        public function count_distributors()
+        {
+            $this->db->from('distributors');
+            return $this->db->count_all_results();
+        }
+
         public function count_all()
         {
             $this->db->from($this->table);
@@ -92,6 +154,5 @@
             $query = $this->db->get('agents');
             return $result = $query->result_array();
         }
-
     }
 ?>

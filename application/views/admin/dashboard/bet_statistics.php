@@ -6,49 +6,33 @@
         <div class="col-md-12">
             <div class="box box-body">
                 <div class="col-md-6">
-                    <h4><i class="fa fa-list"></i> &nbsp; Agent List </h4>
+                    <h4><i class="fa fa-list"></i> &nbsp; Bet Statistics </h4>
                 </div>
-                <div class="col-md-6 text-right">
-                    <div class="btn-group margin-bottom-20">
-                        <a href="<?= base_url('admin/agents/create_agents_pdf'); ?>" class="btn btn-success">Export as PDF</a>
-                        <a href="<?= base_url('admin/agents/export_csv'); ?>" class="btn btn-success">Export as CSV</a>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
     <div class="box border-top-solid">
         <!-- /.box-header -->
         <div class="box-body table-responsive">
-            <table id="example1" class="table table-bordered table-striped ">
+            <table id="example1" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Admin Name</th>
-                    <th>Address</th>
-                    <th>Mobile No.</th>
-                    <th>Limit</th>
-                    <th>Coordinator</th>
-                    <th style="width: 100px;" class="text-right">Option</th>
+                    <th>11AM</th>
+                    <th>4PM</th>
+                    <th>9PM</th>
+                    <th>NODRAW</th>
+                    <th>Total</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach($all_agents as $row): ?>
                     <tr>
-                        <td><?= $row['id']; ?></td>
-                        <td><?= $row['name']; ?></td>
-                        <td><?= $row['address']; ?></td>
-                        <td><?= $row['mobile']; ?></td>
-                        <td><?= $row['limit']; ?></td>
-                        <td><span class="btn btn-primary btn-flat btn-xs bg-green"><?= getCoordinatorName($row['coordinator_id']) ?><span></td>
-                        <td class="text-right"><a href="<?= base_url('admin/agents/edit/'.$row['id']); ?>" class="btn btn-info btn-flat btn-xs">Edit</a>
-                            <a data-href="<?= base_url('admin/agents/del/'.$row['id']); ?>" class="btn btn-danger btn-flat btn-xs" data-toggle="modal" data-target="#confirm-delete">Delete</a>
-                        </td>
+                        <td><?= $bet_statistics['11AM']; ?></td>
+                        <td><?= $bet_statistics['4PM']; ?></td>
+                        <td><?= $bet_statistics['9PM']; ?></td>
+                        <td><? if(isset($bet_statistics['NODRAW'])) echo $bet_statistics['NODRAW']; ?></td>
+                        <td><?= $bet_statistics['total']; ?></td>
                     </tr>
-                <?php endforeach; ?>
                 </tbody>
-
             </table>
         </div>
         <!-- /.box-body -->
@@ -85,10 +69,7 @@
 <script>
     var table;
     $(function () {
-        table = $("#example1").DataTable();
-        table
-            .order( [ 0, 'desc' ] )
-            .draw();
+        table = $('#example1').DataTable();
     });
 </script>
 <script type="text/javascript">
@@ -97,6 +78,3 @@
     });
 </script>
 
-<script>
-    $("#view_agents").addClass('active');
-</script>

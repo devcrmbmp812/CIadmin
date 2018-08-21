@@ -177,6 +177,17 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
                   <li id="view_smsouts" class=""><a href="<?= base_url('admin/smsouts'); ?>"><i class="fa fa-circle-o"></i>View SMS Outs</a></li>
               </ul>
           </li>
+          <li id="reportings" class="treeview">
+              <a href="#">
+                  <i class="fa fa-dashboard"></i> <span>Reporting</span>
+                  <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+              </a>
+              <ul class="treeview-menu">
+                  <li id="generate_winners"><a href="<?= base_url('admin/reporting'); ?>"><i class="fa fa-circle-o"></i>Generate Winners</a></li>
+              </ul>
+          </li>
           <!--<li id="adminlte" class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>

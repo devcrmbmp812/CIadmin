@@ -6,7 +6,7 @@
         public function __construct()
         {
             parent::__construct();
-            $this->load->model('admin/bet_model', 'bet_model');
+                $this->load->model('admin/bet_model', 'bet_model');
         }
 
         public function index()
@@ -205,13 +205,7 @@
                 $row[] = $person->bet_code;
                 $row[] = $person->bet_text;
                 $row[] = $person->text_code;
-
                 $row[] = '<span class="btn btn-primary btn-flat btn-xs bg-green">'.getAgentName($person->agent_id).'<span>';
-
-                //add html for action
-//                $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_person('."'".$person->id."'".')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-//            <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Delete" onclick="delete_person('."'".$person->id."'".')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
-//            <a class="btn btn-sm btn-default" href="javascript:void(0)" title="View" onclick="view_person('."'".$person->id."'".')"><i class="glyphicon glyphicon-file"></i> View</a>';
                 $row[] = '<a class="btn btn-sm btn-primary" href="'.base_url('admin/bets/edit/').$person->id.' class="btn btn-info btn-flat btn-xs">Edit</a>'.'
                             <a class="btn btn-sm btn-danger" data-href="'.base_url('admin/bets/del/').$person->id.'" class="btn btn-danger btn-flat btn-xs" data-toggle="modal" data-target="#confirm-delete">Delete</a>';
 

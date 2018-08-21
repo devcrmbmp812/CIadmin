@@ -84,10 +84,6 @@
 
     $(function () {
 
-        console.log("<?php echo site_url('admin/bets/bet_ajax_list')?>");
-        console.log($('meta[name="<?= $this->security->get_csrf_token_name()?>"]').attr('content'));
-        console.log("<?php echo $this->security->get_csrf_hash(); ?>");
-
         table = $('#example1').DataTable({
 
             "processing": true, //Feature control the processing indicator.
