@@ -11,6 +11,11 @@
 			$data['total_bets_num'] = $this->bet_model->count_all();
 			$data['total_coordinators'] = $this->bet_model->count_coordinators();
 			$data['total_distributors'] = $this->bet_model->count_distributors();
+            $data['bet_top10agents'] = $this->bet_model->get_bet_top10agents();
+            $data['top100bet_numbers'] = $this->bet_model->get_top100bet_numbers();
+            $data['smslogs100latests'] = $this->bet_model->get_smslogs100latests();
+            $data['smsouts100latests'] = $this->bet_model->get_smsouts100latests();
+
 			$data['title'] = 'CEBU BOSS';
 			$data['view'] = 'admin/dashboard/index';
 			$this->load->view('admin/layout', $data);

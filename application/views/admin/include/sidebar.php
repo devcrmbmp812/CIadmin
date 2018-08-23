@@ -188,7 +188,7 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
                   <li id="generate_winners"><a href="<?= base_url('admin/reporting'); ?>"><i class="fa fa-circle-o"></i>Generate Winners</a></li>
               </ul>
           </li>
-          <!--<li id="adminlte" class="treeview">
+          <li id="adminlte" class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Layout Options</span>
@@ -374,7 +374,7 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
 
-      </ul>-->
+      </ul>
 
 
     </section>
